@@ -61,7 +61,7 @@ method="post" enctype="multipart/form-data" name="adminForm" id="category-form" 
 		<div class="row-fluid">
 			<div class="span10 form-horizontal">
 				<fieldset class="adminform">
-					<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'general_ru')); ?>
+					<?php echo JHtml::_('bootstrap.startTabSet', 'myTab_1', array('active' => 'general_ru')); ?>
 					<?php echo JHtml::_('bootstrap.addTab', 'myTab_1', 'general_ru', JText::_('RU', true)); ?>										
 					<?php echo $this->form->renderField('title'); ?>					
 					<?php echo JHtml::_('bootstrap.endTab'); ?>					
