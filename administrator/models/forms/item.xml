@@ -50,7 +50,7 @@
 		description="COM_HACHA_FORM_DESC_ITEM_IMAGE" 
 		hint="COM_HACHA_FORM_LBL_ITEM_IMAGE"
 		required="true" 
-		upload_directory="/media/menu/"
+		upload_directory="media/menu"
 		/> 
 		
 		<field name="text"

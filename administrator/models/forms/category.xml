@@ -39,7 +39,7 @@
 		description="COM_HACHA_FORM_DESC_CATEGORY_IMAGE" 
 		hint="COM_HACHA_FORM_LBL_CATEGORY_IMAGE"
 		required="true" 
-		upload_directory="/media/menu/"
+		upload_directory="media/menu"
 		/> 
 		
 		<field name="title_en"
