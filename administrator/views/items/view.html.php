@@ -144,6 +144,15 @@ class HachaViewItems extends JViewLegacy
 			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), "value", "text", $this->state->get('filter.state'), true)
 
 		);
+		JHtmlSidebar::addFilter(
+
+			JText::_('JOPTION_SELECT_PUBLISHED'),
+
+			'filter_published',
+
+			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), "value", "text", $this->state->get('filter.state'), true)
+
+		);
 	}
 
 	/**
