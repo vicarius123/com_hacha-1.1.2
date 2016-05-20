@@ -62,9 +62,6 @@ action="<?php echo JRoute::_('index.php?option=com_hacha&layout=edit&id=' . (int
 method="post" enctype="multipart/form-data" name="adminForm" id="item-form" class="form-validate">
 	
 	<div class="form-horizontal">
-		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'general')); ?>
-		
-		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'general', JText::_('COM_HACHA_TITLE_ITEM', true)); ?>
 		<div class="row-fluid">
 			<div class="span10 form-horizontal">
 				<fieldset class="adminform">
