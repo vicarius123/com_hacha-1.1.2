@@ -267,4 +267,32 @@ class HachaModelCategory extends JModelItem
 			break;
 		}
 	}
+	
+	public function getCatItems($id){
+	
+		$db = JFactory::getDbo();
+		
+		$query = $db->getQuery(true);
+		
+		$query = "SELECT * FROM #__menu_item WHERE category_id = $id ORDER BY ordering asc";
+		
+		$db->setQuery($query);
+
+		$results = $db->loadObjectList();
+		
+		return $results;
+	
+	}
+	
+	public function getCats(){
+	
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query = "SELECT * FROM `#__menu_category` WHERE state = 1 ORDER BY ordering ASC";
+		
+		$db->setQuery($query);
+		$results = $db->loadObjectList();
+		
+		return $results;
+	}
 }

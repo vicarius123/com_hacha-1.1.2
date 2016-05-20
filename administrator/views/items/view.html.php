@@ -135,15 +135,20 @@ class HachaViewItems extends JViewLegacy
 		JHtmlSidebar::setAction('index.php?option=com_hacha&view=items');
 
 		$this->extra_sidebar = '';
+		
+		$cats = HachaHelpersHacha::getCats();
+		
+
 		JHtmlSidebar::addFilter(
 
-			JText::_('JOPTION_SELECT_PUBLISHED'),
+			JText::_('- Select Cats -'),
 
-			'filter_published',
+			'filter_cat',
 
-			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), "value", "text", $this->state->get('filter.state'), true)
+			JHtml::_('select.options', $cats, "value", "text", $this->state->get('filter.cats'), true)
 
 		);
+		
 		JHtmlSidebar::addFilter(
 
 			JText::_('JOPTION_SELECT_PUBLISHED'),

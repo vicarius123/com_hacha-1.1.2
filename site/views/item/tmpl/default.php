@@ -10,65 +10,50 @@
 defined('_JEXEC') or die;
 
 
+$item = $this->item;
+$lang = JFactory::getLanguage()->getTag(); 
 ?>
-<?php if ($this->item) : ?>
+<?php if ($item) : ?>
 
-	<div class="item_fields">
-		<table class="table">
-			<tr>
-			<th><?php echo JText::_('COM_HACHA_FORM_LBL_ITEM_TITLE'); ?></th>
-			<td><?php echo $this->item->title; ?></td>
-</tr>
-<tr>
-			<th><?php echo JText::_('COM_HACHA_FORM_LBL_ITEM_TITLE_EN'); ?></th>
-			<td><?php echo $this->item->title_en; ?></td>
-</tr>
-<tr>
-			<th><?php echo JText::_('COM_HACHA_FORM_LBL_ITEM_CATEGORY_ID'); ?></th>
-			<td><?php echo $this->item->category_id; ?></td>
-</tr>
-<tr>
-			<th><?php echo JText::_('COM_HACHA_FORM_LBL_ITEM_IMAGE'); ?></th>
-			<td>
-			<?php
-			foreach ((array) $this->item->image as $singleFile) : 
-				if (!is_array($singleFile)) : 
-					$uploadPath = '/media/menu/' . DIRECTORY_SEPARATOR . $singleFile;
-					 echo '<a href="' . JRoute::_(JUri::root() . $uploadPath, false) . '" target="_blank">' . $singleFile . '</a> ';
-				endif;
-			endforeach;
-		?></td>
-</tr>
-<tr>
-			<th><?php echo JText::_('COM_HACHA_FORM_LBL_ITEM_TEXT'); ?></th>
-			<td><?php echo $this->item->text; ?></td>
-</tr>
-<tr>
-			<th><?php echo JText::_('COM_HACHA_FORM_LBL_ITEM_PRICE'); ?></th>
-			<td><?php echo $this->item->price; ?></td>
-</tr>
-<tr>
-			<th><?php echo JText::_('COM_HACHA_FORM_LBL_ITEM_WEIGHT'); ?></th>
-			<td><?php echo $this->item->weight; ?></td>
-</tr>
-<tr>
-			<th><?php echo JText::_('COM_HACHA_FORM_LBL_ITEM_TEXT_EN'); ?></th>
-			<td><?php echo $this->item->text_en; ?></td>
-</tr>
-<tr>
-			<th><?php echo JText::_('COM_HACHA_FORM_LBL_ITEM_STATE'); ?></th>
-			<td>
-			<i class="icon-<?php echo ($this->item->state == 1) ? 'publish' : 'unpublish'; ?>"></i></td>
-</tr>
-<tr>
-			<th><?php echo JText::_('COM_HACHA_FORM_LBL_ITEM_CREATED_BY'); ?></th>
-			<td><?php echo $this->item->created_by_name; ?></td>
-</tr>
-
-		</table>
+	<div class="pop_up_menu">
+		<div class="closeIcon"></div>
+		<div class="row">
+		
+			<div class="col-sm-6 rounded">
+				<img alt="" style="max-height:307px;border-radius: 18px;max-width: 100%;" src="http://hacha.ru/media/menu/<?=$item->image;?>">
+			</div>
+			
+			<div class="col-sm-6">
+				<div class="title"><?=($lang == 'ru-RU')?$item->title:$item->title_en;?></div>
+				<div class="topLine">
+					<div class="price">
+						<span class="digit"><?=number_format($item->price);?></span> <?=($lang == 'ru-RU')? 'руб.':'rub.'?>
+						</div>
+				</div>
+				<span class="quanBlock">
+					<span class="item plus"></span>
+				</span>
+				<br clear="all">
+				<? if($item->text):?>
+				<div class="ingridients" style="display: block;">
+					<strong><?=($lang == 'ru-RU')? 'Состав':'Composition'?></strong>
+					<div class="text">
+						<p><?=($lang == 'ru-RU')?$item->text:$item->text_en;?></p>
+					</div>
+				</div>
+				<? endif;?>
+				<? if($item->weight):?>
+				<div class="weight" style="display: block;">
+					<strong><?=($lang == 'ru-RU')? 'Выход в граммах':'Yield in grams'?></strong><br>
+					<span class="digit"><?=$item->weight;?></span>
+				</div>
+				<? endif;?>
+			</div>
+		</div>
 	</div>
-	
-	<?php
+
+<?php
 else:
 	echo JText::_('COM_HACHA_ITEM_NOT_LOADED');
 endif;
+?>

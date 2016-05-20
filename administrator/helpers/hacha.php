@@ -65,6 +65,23 @@ JHtmlSidebar::addEntry(
 
 		return $result;
 	}
+	public static function getCats(){
+		$db = JFactory::getDbo();
+		
+		$query = $db->getQuery(true);
+		
+		$query = "SELECT * FROM #__menu_category WHERE state = 1";
+		
+		$db->setQuery($query);
+		$options = array();
+		$results = $db->loadObjectList();
+		
+		foreach($results as $key=>$result){
+			$options[] = JHtml::_('select.option', $result->id, $result->title);
+		}
+		
+		return $options;
+	}
 }
 
 

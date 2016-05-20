@@ -70,6 +70,9 @@ class HachaModelItems extends JModelList
 		$search = $app->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
+		$cats = $app->getUserStateFromRequest($this->context . '.filter.cats', 'filter_cat', '', 'string');
+		$this->setState('filter.cats', $cats);
+		
 		$published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
 		$this->setState('filter.state', $published);
 
@@ -134,6 +137,12 @@ class HachaModelItems extends JModelList
 
 		// Filter by published state
 		$published = $this->getState('filter.state');
+		
+		$cats = $this->getState('filter.cats');
+		print_r($cats);
+		if(!empty($cats)){
+			$query->where('a.category_id = '.$cats);
+		}
 
 		if (is_numeric($published))
 		{
@@ -168,7 +177,7 @@ class HachaModelItems extends JModelList
 		{
 			$query->order($db->escape($orderCol . ' ' . $orderDirn));
 		}
-
+		
 		return $query;
 	}
 
