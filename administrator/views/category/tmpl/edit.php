@@ -74,7 +74,7 @@ method="post" enctype="multipart/form-data" name="adminForm" id="category-form" 
 					<?php if (!empty($this->item->image)) : ?>
 					<?php foreach ((array)$this->item->image as $fileSingle) : ?>
 					<?php if (!is_array($fileSingle)) : ?>
-					<a href="<?php echo JRoute::_(JUri::root() . '/media/menu/' . DIRECTORY_SEPARATOR . $fileSingle, false);?>"><?php echo $fileSingle; ?></a> | 
+					<a href="<?php echo JRoute::_(JUri::root() . 'media/menu' . DIRECTORY_SEPARATOR . $fileSingle, false);?>"><?php echo $fileSingle; ?></a> | 
 					<?php endif; ?>
 					<?php endforeach; ?>
 					<?php endif; ?>
