@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<component>
+  <table action="add" table_name="#__menu_item" storage_engine="MyISAM" collation="utf8_general_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" description=""/>
+    <field action="change" field_name="title" field_type="TEXT" description="Type any title for this menu item"/>
+    <field action="change" field_name="title_en" field_type="TEXT" description=""/>
+    <field action="change" field_name="category_id" field_type="TEXT" description="Select a category for this menu item"/>
+    <field action="change" field_name="image" field_type="TEXT" description="Upload a picture for this menu item"/>
+    <field action="change" field_name="text" field_type="TEXT" description="Insert ingredients for this menu item"/>
+    <field action="change" field_name="price" field_type="INT" field_length="11" description="Insert a price for this menu item"/>
+    <field action="change" field_name="weight" field_type="INT" field_length="11" description="Insert a weight for this menu item"/>
+    <field action="change" field_name="text_en" field_type="TEXT" description="Insert ingredients for this menu item"/>
+    <field field_name="ordering" field_type="INT" field_length="11" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" description=""/>
+    <field action="remove" field_name="title_ru"/>
+    <field action="remove" field_name="text_ru"/>
+    <field action="remove" field_name="delivery"/>
+    <field action="remove" field_name="min_count"/>
+    <field action="remove" field_name="alias"/>
+    <field action="remove" field_name="enable"/>
+  </table>
+  <table action="add" table_name="#__menu_category" storage_engine="MyISAM" collation="utf8_general_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" description=""/>
+    <field action="change" field_name="title" field_type="TEXT" description="Insert category title"/>
+    <field action="add" field_name="alias" field_type="VARCHAR(255) COLLATE utf8_bin" description="Category Alias"/>
+    <field action="change" field_name="image" field_type="TEXT" description=""/>
+    <field action="change" field_name="title_en" field_type="TEXT" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" description=""/>
+    <field action="remove" field_name="title_ru"/>
+    <field action="remove" field_name="delivery"/>
+    <field action="remove" field_name="enable"/>
+    <field action="remove" field_name="order"/>
+  </table>
+</component>
