@@ -7,7 +7,7 @@
     <author>Cristopher Chong</author>
     <authorEmail>cris_chong2@hotmail.com</authorEmail>
     <authorUrl>http://none.ru</authorUrl>
-    <version>CVS: 1.1.2</version>
+    <version>CVS: 1.1.3</version>
     <description>AIO Component - menu</description>
     
     <scriptfile>script.php</scriptfile>
